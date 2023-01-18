@@ -307,6 +307,7 @@ struct Answer{
 // #endif
         Help H;
         ll n; cin >> n;
+        int x;
         ll num = 1;
         while (n--){
             ll x, xPower; cin >> x >> xPower;
