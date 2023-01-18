@@ -1,0 +1,59 @@
+/*/ Author: ShAiDSk /*/
+----------------- RoadMap to Reach Expert by Priyansh Agarwal ---------------
+After Basic(or Prerequisites):
+    if (Your_Rating <= 1600){
+        1. Number Theory:
+            ~ Modular Arithmetic.
+            ~ Basic knowledge of Promes, Multiples, Divisor.
+            ~ Bitwise Operator.
+            ~ Euclidean Algorithm.
+            ~ Sieve of Eratosthenes.
+            ~ Binary Modular Exponentiation.
+            ~ Combinatotorics.
+        2. Binary Search and Ternary Search:
+            ~ General Binary Search.
+            ~ Monoonic Functions. (Understand and Proving)
+            ~ C++ STL Function.
+            ~ Binary Seaching on Answer.
+            ~ Convex Function.
+            ~ Ternary Search. (Basic)
+        3. Greedy Algorithm:
+            ~ standerd Greedy Problems.
+            ~ Learning to prove your solution. (Exchange Arguments)
+            ~ Problems from Seaching and Sorting Section of CSES Problemset. (First 50%)
+        4. Dynamic programming:
+            ~ standerd DP Problems.
+            ~ Problems form DP section of CSES Problemset.
+            ~ Basic of DP with Bitmasking.
+            ~ Basic of DP on Trees.
+            ~ No need for Iterative DP at this Point.
+        5. Trees:
+            ~ Basic Properties.
+            ~ DFS.
+            ~ Binary Lifting.
+            ~ Finding LCA in Log(N).
+            ~ Trees section of CSES Problemset.
+        6. Graph:
+            ~ Basic Properties.
+            ~ DFS, BFS.
+            ~ Connected Components.
+            ~ Directed Graphs Basic.
+            ~ 1 Minimum Spanning Tree Algorithm.
+            ~ Optional: (Disjoint Set Union Basic).
+        7. Topics to NOT do:
+            ~ Advance Number Theory: Euler Totient Function, etc.
+            ~ Range Querie DS like Segment Trees, Fenwike Tree.
+            ~ Binary or General Tries.
+            ~ Advance String Algorithm (KMP, Z, Manacher's).
+            ~ Matrix Exponentiation.
+            ~ Strongly Connected Components.
+            ~ Euler Tour.
+            ~ Heavy Light Decomposition.
+            ~ Centroid Decomposition.
+            ~ Square Root Decomposition.
+            ~ DP Optimisation.
+    }
+Advance:
+    else {
+        YOU ARE GOOD ALREADY. KEEP GOING.
+    }

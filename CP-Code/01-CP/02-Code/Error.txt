@@ -1,0 +1,3 @@
+Entered 1 arguments: 
+./a.out n : 98573289
+Time: 4662

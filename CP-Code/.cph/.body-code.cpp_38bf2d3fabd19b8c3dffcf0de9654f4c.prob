@@ -1,0 +1,1 @@
+{"name":"Local: body-code","url":"c:\\Users\\91956\\OneDrive\\Desktop\\ShAiDSkCode\\CP-Code\\body-code.cpp","tests":[{"id":1660733965134,"input":"5 5\n1 3 5 16 18\n2 42 78 93 99","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91956\\OneDrive\\Desktop\\ShAiDSkCode\\CP-Code\\body-code.cpp","group":"local","local":true}

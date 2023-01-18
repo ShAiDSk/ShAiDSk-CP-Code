@@ -1,0 +1,131 @@
+/*/ Author: ShAiDSk /*/
+Hello Shaid here,
+/*/---- Competitive programming ----/*/
+A. Basic:
+    1. First solve a lots of pattern printting problems for Implementation.
+    2. Learn time complexity.
+    3. Learn Linear Search and basic traversal and Implementing Circular Array.
+    4. Basic Number problems:
+        ~ Palindrome and others numbers(perfect, Armstrong, ...).
+    5. Learn Hashing:
+        ~ simple hashing problems.
+    6. Learn Prefix sum problems, both 1D and 2D.
+    7. Learn Sliding Window Technique.
+
+B. Number Theory:
+    1. Learn GCD of two number in Log(n) time (Euclidean and Extended Euclidean algorithm).
+    2. Learn Linear Diphantine Equation.
+    3. Learn Prime - checking primes in sqrt(n) complexity:
+        ~ Learn Sieve of Eratosthenes.
+        ~ Learn Segmented Sieve.
+        ~ Finding the prime factorisation in log(n).
+    4. Learn Euler Totient function.
+    5. Learn Fermat Little Theorem.
+    6. Learn Wilson's theorem.
+
+C. Intermediate Number Theory:
+    1. Finding X^N in log(n).
+    2. Learn Modular Arithmetic.
+    3. Learn Modular Exponentiation.
+    4. Learn Chinese Remainder Theorem.
+    5. Learn Factorial Modulo mod.
+    6. Finding nCr and nPr for Queries.
+    7. Learn Includion and Exclusion principle.
+
+D. Basic Algorithm:
+    1. Learn Binary Search.
+    2. Learn basic Sorting and Searching Algorithm:
+        ~ solve a lot's of Constructive and swaping problems.
+    3. Learn 2-pionter approch.
+    4. Learn Bit Manipulation:
+        ~ learn Power Set of a given array or a string using BIT.
+    5. Learn Number of Subarrays with XOR as Zero - It's an problem.
+    6. Learn Greedy Algorithm:
+        ~ Kadane's algorithm and solve a lot's of problems.
+        ~ Job sequencing and Activity Selection problem.
+
+D. Recursion:
+    1. Basic Recursion problems:
+        ~ Finding Factorial.
+        ~ Implement Binary Search.
+        ~ Implement Modular Exponentiation.
+        ~ Finding subset with the given sum and so on...
+        ~ Learn Merge sort and Quick sort and solve problem releted to Merge sort.
+        ~ **Backtracking problem, like Sudoko, N queen and etc.
+
+E. Algorithm Releted Problems:
+    1. Meet in the Middle Algorithm.
+    2. Divide and Conquer.
+    3. Next Greater Element / Next Smaller Element using Stack.
+    4. Problem releted to Parenthesis.
+    5. Largest Rectangular Area in Histogram.
+    6. Problem releted to Heap (use Priority Queue).
+
+F. Advance:
+    1. String Algorithm:
+        ~ Hashing on string.
+        ~ Learn Rabin Karp Algorithm.
+        ~ Learn Prefix Function.
+        ~ learn KMP Algorithm.
+        ~ Z-Function.
+        ~ Learn Manacher's Algorithm.
+    2. Tree:
+        ~ Learn Tree / Graph Representation.
+        ~ Learn DFS / BFS Traversal in Graph and Tree.
+        ~ Learn Diameter of Tree.
+        ~ Finding LCA using Euler Tour.
+        ~ Finding LCA using Binary Lifting.
+        ~ Distance between Two Nodes.
+        ~ SubTree Problems.
+        ~ Solve a lots of problems on the above algorithm.
+    3. Graph:
+        ~ Learn Connected Components.
+        ~ learn Topological Sort.
+        ~ Learn Cycle Detection in Graph.
+        ~ Learn Bipartite check in Graph.
+        ~ Learn SCC using Kosaraju's Algorithm.
+        ~ Learn Dijkstra's Algorithm.
+        ~ Learn Bellman Ford Algorithm.
+        ~ Learn Floyd Warshall Algorithm.
+        ~ Practice Problems on the above Algorithms.
+            ~ Learn Bridges in Graph.
+            ~ Articulation Point in Graph.
+            ~ Minimum Spanning tree using Kruskal's Also.
+            ~ Prim's Algorithm.
+            ~ 0/1 BFS.
+            ~ Finding Bridges online.
+            ~ Solve Problems on the above algorithm.
+    4. Dynamic programming:
+        ~ First make Strong grip in Recursion.
+        ~ Understand what is Memoization.
+        ~ Solve standerd DP problems like, LCA, Knapsack etc.
+        ~  Solve Atcoder Educational Contest on Dynamic programming.(~26 problems)
+        ~ Solve DP problems from defferent Platforms (specifically SPOJ).
+            i. Digit Dynamic programming:
+                ~ Understand how do we write Recurrence for Digit DP(CF blog).
+                ~ Solve a bunch of problems on it.
+                ~ Read about DP with Bitmask ans solve problems.
+                ~ DP on Trees.
+                ~ SOS DP.
+                ~ DP is all about solving problems, so do as many ans i can.
+            ii. Disjoint Set(using all Optimisation).
+                ~ Offline Queries using Disjoint Set.
+           iii. Kruskal's Algorithm and solve problems on it.
+            iv. Sparse Table (Not that much Important).
+            v.  Fenwick Tree (Read about Range update trick also).
+            vi. Binary Lifting on Fenwick Tree:
+                ~ Solve a lots of problems on Fenwick Tree.
+    5. Learn Matrix Exponentiation.(problem)
+    6. Sqrt Decomposition Technique.
+    7. Update and Query Operation.
+    8. Mo's Algorithm:
+        ~ Mo's Algorithm on Tree.
+    9. Segment Trees (Renge Queries and point Updates):
+        ~ Lazy Propagration on Segment Trees.
+    10. Very Advance Algorithm(Hard):
+        ~ Sprague-Grundy Theorem.
+        ~ Flows and Related Problems.
+        ~ Heavy Light Decomposition.
+        ~ Convex Hull Algorithm.
+        ~ FFT / NTT.
+-----------------------------------X---------------------------------------
