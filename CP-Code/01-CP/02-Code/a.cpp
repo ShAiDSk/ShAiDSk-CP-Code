@@ -130,6 +130,8 @@ typedef unsigned long long ull;
 typedef long double lld;
 #define nln  '\n'
 typedef long long ll;
+/*/------------------------------Global-Defines-------------------------------/*/
+const ll MOD = 1e9 + 7;
 /*/---------------------------Helping Functions------------------------------/*/
 struct Help{
     template<typename dataType>
@@ -209,7 +211,7 @@ struct Help{
         while (b > 0){
             if (b & 1) res = (res * a) % mod;
             a = (a * a) % mod;
-            b = b >> 1;
+            b >>= 1;
         }
         return res;
     }
@@ -256,6 +258,7 @@ struct range{
         return l < other.l;
     }
 };
+/*/---------------------Debug or TRACE Interactive problems------------------------/*/
 //* Debug or TRACE Interactive problems
 struct Interator{
     int n;
@@ -284,8 +287,6 @@ struct Interator{
         return true;
     }
 };
-/*/------------------------------Global-Defines-------------------------------/*/
-const ll MOD = 1e9 + 7;
 /*/--------------------------------------------------------------------------/*/
 struct Answer{
     int get(char c){
@@ -306,24 +307,8 @@ struct Answer{
 //     Interator codeforces = Interator(5);
 // #endif
         Help H;
-        ll n; cin >> n;
-        int x;
-        ll num = 1;
-        while (n--){
-            ll x, xPower; cin >> x >> xPower;
-            ll a = H.expo(x, xPower, MOD);
-            // num *= a;
-            num = H.mod_mul(num, a, MOD);
-        }
-        ll cnt = 0, sumDiv = 0, product = 1;
-        for (ll i = 1; i <= num; i++){
-            if (num % i == 0){
-                cnt++;
-                sumDiv = H.mod_add(sumDiv, i, MOD);
-                product = H.mod_mul(product, i, MOD);
-            }
-        }
-        cout << cnt << ' ' << sumDiv << ' ' << product << nln;
+        int n; cin >> n;
+        
     }
 };
 /*/--------------------------------------------------------------------------/*/
