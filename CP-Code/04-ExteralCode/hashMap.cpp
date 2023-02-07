@@ -1,21 +1,17 @@
 /*/ Author: ShAiDSk /*/
-// #ifndef __LOCAL_ShAiDSk__
-    // #pragma GCC optimize("03")
+#ifndef __LOCAL_ShAiDSk__
+    #pragma GCC optimize("03")
     // #pragma GCC target("avx,avx2,sse4.2,bmi,bmi2,popcnt,lzcnt") // Gives SIGILL on SPOJ
-// #endif
+#endif
 #include <bits/stdc++.h>
-// https://atcoder.github.io/ac-library/production/document_en/ //! (AC(AtCoder) Library Document (production))
-// #include <atcoder/all>
-// https://atcoder.github.io/ac-library/document_en/modint.html //! (included in grader)
+// https://atcoder.github.io/ac-library/document_en/modint.html (included in grader)
 // #include <atcoder/modint>
-#include <atcoder/dsu> // For Graph or Trees
-#include <atcoder/string> // For String
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace std;
 using namespace chrono;
 using namespace __gnu_pbds;
-using namespace atcoder;
+// using namespace atcoder;
 // using mint = modint;
 /*/---------------------------From(PBDS)----------------------/*/
 template <class T>
@@ -302,14 +298,17 @@ struct Interator{
     }
 };
 /*/------------------------------Global-Defines-------------------------------/*/
-const int mxN = 1e6, MOD = 1e9 + 7;
-// int dp[mxN + 1];
-vector <int> dp(mxN + 1, -1);
+const int N = 1e6;
+const ll MOD = 1e9 + 7;
+ll fact[N + 1];
 /*/--------------------------------------------------------------------------/*/
 struct Answer{
     Help H; // Interator codeforces = Interator(5);
     int get(char c){
         return (int(c) - 'a' + 1);
+    }
+    int getInt(char c){
+        return (c - '0');
     }
     void getSum(ll &ans, int n){
         ans += (n * 1LL * (n + 1)) / 2;
@@ -318,16 +317,74 @@ struct Answer{
     bool check(void){
         return false;
     }
-    // for dp
-    int helper(int n){
-        return 0;
+    //! Number Hashing
+    void NumHashing(){
+        //* Input: 5
+        //        1 2 1 3 2
+        //! Hashing in integer
+        int n; cin >> n;
+        vector <int> a(n);
+        for (auto &it : a) cin >> it;
+        // int Hash[n + 1] = {0};
+        vector <int> Hash(n + 1, 0);
+        // cout << Hash ;
+        for (int i = 0; i < n; i++){
+            Hash[a[i]]++;
+        }
+        // for (int i = 0; i < n; i++) cout << Hash[i] << ' ';
+        int q; cin >> q;
+        while (q--){
+            int x; cin >> x;
+            cout << x << ": " << Hash[x] << nln;
+        }
+    }
+    //! Hashing in a Lower case string.
+    void HashingLowerCaseString(){
+        //* Input: shaidbrishtiiloveyou
+            //    6
+            //    a b d i o r
+        string s; cin >> s;
+        vector <int> Hash(26, 0);
+        for (auto &it : s){
+            Hash[it - 'a']++;
+        }
+        // cout << Hash;
+        int q; cin >> q;
+        while (q--){
+            char c; cin >> c;
+            cout << c << ": " << Hash[c - 'a'] << ", ";
+        }
+        //? Output:- a: 1, b: 1, d: 1, i: 4, o: 2, r: 1,
+    }
+    //! Hashing in any string.
+    void HashingInAnyString(){
+        //* Input:
+        //     shaidbrishtiiloveyou
+        //     6
+        //     a b d i o r
+        string s; cin >> s;
+        vector <int> Hash(256, 0);
+        for (auto &it : s){
+            Hash[it]++;
+        }
+        // cout << Hash;
+        int q; cin >> q;
+        while (q--){
+            char c; cin >> c;
+            cout << c << ": " << Hash[c] << ", ";
+        }
+        //? Output:- a: 1, b: 1, d: 1, i: 4, o: 2, r: 1,
+        //* Input: 2
+        //     AAABBBBCabc
+        //     6
+        //     A B C a b c
+        //? Output2:- A: 3, B: 4, C: 1, a: 1, b: 1, c: 1,
     }
     void Solve(){
-        //* /mnt/c/Users/91956/OneDrive/Desktop/ShAiDSkCode/CP-Code/01-CP/02-Code
-        // g++ a.cpp -o a.out; ./a.out < in > out; cat cerr.txt; echo "Local Output"; cat out;
         // `{`:∀:x:∀:`}`
-        int n; cin >> n;
-        
+        // NumHashing();
+        // HashingLowerCaseString();
+        // HashingInAnyString();
     }
 };
 /*/--------------------------------------------------------------------------/*/

@@ -4,11 +4,15 @@
     // #pragma GCC target("avx,avx2,sse4.2,bmi,bmi2,popcnt,lzcnt") // Gives SIGILL on SPOJ
 #endif
 #include <bits/stdc++.h>
+// https://atcoder.github.io/ac-library/document_en/modint.html (included in grader)
+// #include <atcoder/modint>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace std;
 using namespace chrono;
 using namespace __gnu_pbds;
+// using namespace atcoder;
+// using mint = modint;
 /*/---------------------------From(PBDS)----------------------/*/
 template <class T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -102,8 +106,9 @@ inline int64_t random_long(long long l = LLONG_MIN,long long r = LLONG_MAX){
     uniform_int_distribution<int64_t> generator(l,r);
     return generator(rng);
 }
-struct custom_hash {
+struct custom_hash { // Credits: https://codeforces.com/blog/entry/62393
     static uint64_t splitmix64(uint64_t x) {
+        // http://xorshift.di.unimi.it/splitmix64.c
         x += 0x9e3779b97f4a7c15;
         x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
         x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
@@ -169,70 +174,86 @@ struct Help{
         return s;
     }
     // Power of a number.
-    ll power(int base, int pow){
+    template<typename dataType>
+    dataType power(dataType base, dataType pow){
         if (pow == 0) return 1;
         else if (base == 1) return base;
         else return base * power(base, pow - 1);
     }
     // Binary Exponentiation
-    int binExpo(int a, int b){
+    template<typename dataType>
+    dataType binExpo(dataType a, dataType b){
         if (b == 0) return 1;
-        int x = binExpo(a, b/2);
+        dataType x = binExpo(a, b/2);
         if (b % 2 == 0) return (x * x);
         return (x * x * a);
     }
     // getUnique Number.
-    void getUnique(vector <int> &a) {
+    template<typename dataType>
+    void getUnique(vector <dataType> &a) {
         sort(all(a));
         a.erase(unique(all(a)), a.end());
     }
-    ll x(ll n, ll digit){
+    template<typename dataType>
+    dataType x(dataType n, dataType digit){
         if (n == 1) return digit;
         digit *= digit;
         return x(n - 1, digit);
     }
-    ll gcd(ll a, ll b){
-        ll temp = a + b;
+    template<typename dataType>
+    dataType gcd(dataType a, dataType b){
+        dataType temp = a + b;
         a = (a > b)? a : b;
         b = temp - a;
         if (a % b == 0) return b;
         return gcd(b, a % b);
     }
-    ll expo(ll a, ll b, ll mod){
-        ll res = 1;
+    /** Computes a^b modulo MOD in O(log MOD) time.**/
+    template<typename dataType>
+    dataType expo(dataType a, dataType b, dataType mod){
+        a %= mod;
+        dataType res = 1;
         while (b > 0){
             if (b & 1) res = (res * a) % mod;
             a = (a * a) % mod;
-            b = b >> 1;
+            b >>= 1;
         }
         return res;
     }
-    ll mminvprime(ll a, ll b){
+    template<typename dataType>
+    dataType mminvprime(dataType a, dataType b){
         return expo(a, b - 2, b);
     }
-    ll mod_add(ll a, ll b, ll m){
-        a = a % m;
-        b = b % m; 
-        return (((a + b) % m) + m) % m;
+    template<typename dataType>
+    dataType mod_add(dataType a, dataType b, dataType mod){
+        a = a % mod;
+        b = b % mod;
+        return (((a + b) % mod) + mod) % mod;
     }
-    ll mod_mul(ll a, ll b, ll m){
-        a = a % m;
-        b = b % m;
-        return (((a * b) % m) + m) % m;
+    template<typename dataType>
+    dataType mod_mul(dataType a, dataType b, dataType mod){
+        a = a % mod;
+        b = b % mod;
+        return (((a * b) % mod) + mod) % mod;
     }
-    ll mod_sub(ll a, ll b, ll m){
-        a = a % m;
-        b = b % m;
-        return (((a - b) % m) + m) % m;
+    template<typename dataType>
+    dataType mod_sub(dataType a, dataType b, dataType mod){
+        a = a % mod;
+        b = b % mod;
+        return (((a - b) % mod) + mod) % mod;
     }
-    ll mod_div(ll a, ll b, ll m){
-        a = a % m;
-        b = b % m;
-        return (mod_mul(a, mminvprime(b, m), m) + m) % m;
+    template<typename dataType>
+    dataType mod_div(dataType a, dataType b, dataType mod){
+        a = a % mod;
+        b = b % mod;
+        return (mod_mul(a, mminvprime(b, mod), mod) + mod) % mod;
     } //only for prime m
+    template<typename dataType>
+    dataType binomial(dataType a, dataType b, dataType mod){
+        if (a == 0 || b == a) return 1;
+        return(binomial(a - 1, b - 1, mod) + binomial(a - 1, b, mod)) % mod;
+    }
 };
-
- 
 /*/-----------------------------Code begins----------------------------------/*/
 template <typename T> void out(T t){cerr << t << nln;}
 template <typename T, typename... Args>
@@ -247,6 +268,7 @@ struct range{
         return l < other.l;
     }
 };
+/*/---------------------Debug or TRACE Interactive problems------------------------/*/
 //* Debug or TRACE Interactive problems
 struct Interator{
     int n;
@@ -276,9 +298,12 @@ struct Interator{
     }
 };
 /*/------------------------------Global-Defines-------------------------------/*/
-const ll MOD = 1e9 + 7;
+const int mxN = 1e6, MOD = 1e9 + 7;
+// int dp[mxN + 1];
+vector <int> dp(mxN + 1, -1);
 /*/--------------------------------------------------------------------------/*/
 struct Answer{
+    Help H; // Interator codeforces = Interator(5);
     int get(char c){
         return (int(c) - 'a' + 1);
     }
@@ -289,19 +314,16 @@ struct Answer{
     bool check(void){
         return false;
     }
+    // int helper(int n){
+        
+    // }
     void Solve(){
-        //* /mnt/c/Users/91956/OneDrive/Desktop/ShAiDSkCode\CP-Code\01-CP\02-Code
+        //* /mnt/c/Users/91956/OneDrive/Desktop/ShAiDSkCode/CP-Code/01-CP/02-Code
         // g++ b.cpp -o b.out; ./b.out < in > out; cat cerr.txt; echo "Local Output"; cat out;
         // `{`:∀:x:∀:`}`
-// #ifdef ShAiDSk
-//     Interator codeforces = Interator(5);
-// #endif
-        Help H;
-        // int a = 2, b = 5;
-        // H.swap(a, b);
-        // cout << a << ' ' << b;
-        int n = 5;
-        cout << H.to_binary(2);
+        // memset(dp, -1, sizeof(dp));
+        int n; cin >> n;
+        cout << dp;
     }
 };
 /*/--------------------------------------------------------------------------/*/

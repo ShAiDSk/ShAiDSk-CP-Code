@@ -1,4 +1,9 @@
 /*/---------------------------Modular Arithmetic------------------------------/*/
+
+// https://atcoder.github.io/ac-library/document_en/modint.html
+#include <atcoder/modint>
+using mint = atcoder::modint;
+
 template<const int MOD>
 struct modular_int{
 	int x;

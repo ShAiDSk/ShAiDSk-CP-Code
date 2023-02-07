@@ -1,3 +1,9 @@
+from datetime import datetime
 import pywhatkit
 
-pywhatkit.sendwhatmsg("+916297540992", "Hi, Shaid this side!", 17, 36)
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+print("Current Time =", current_time)
+
+pywhatkit.sendwhatmsg("+916297540992", "Shaid:)", 9, 34)
